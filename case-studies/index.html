@@ -1,0 +1,67 @@
+<!doctype html>
+
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Case Studies · Acme Corp</title>
+    <link rel="stylesheet" href="/common.css" />
+  </head>
+
+  <body>
+    <header id="site-header"></header>
+
+    <main>
+      <div id="app">
+        <div>
+          <h1 class="page-title">Case Studies</h1>
+
+          <ul class="case-list" id="case-list"></ul>
+        </div>
+      </div>
+    </main>
+
+    <footer>© 2026 Acme Corp. All rights reserved.</footer>
+
+    <script src="./data.js"></script>
+
+    <script>
+      const caseList = document.getElementById("case-list");
+
+      if (caseStudies.length === 0) {
+        caseList.innerHTML = `
+      <li class="case-empty">
+        No case studies yet.
+      </li>
+    `;
+      } else {
+        caseList.innerHTML = caseStudies
+          .map((study) => {
+            return `
+          <li class="case-item">
+            <div class="case-item-head">
+              <h2 class="case-item-title">
+                <a href="/case-studies/${study.slug}/">
+                  ${study.title}
+                </a>
+              </h2>
+
+              ${study.gated ? `<span class="badge">Gated</span>` : ""}
+            </div>
+
+            <p class="case-desc">
+              ${study.description}
+            </p>
+          </li>
+        `;
+          })
+          .join("");
+      }
+    </script>
+
+    <script src="/nav.js"></script>
+  </body>
+</html>

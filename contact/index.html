@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Contact · Acme Corp</title>
+    <link rel="stylesheet" href="/common.css" />
+  </head>
+  <body>
+    <header id="site-header"></header>
+
+    <main>
+      <div id="app">
+        <div class="contact-wrap">
+          <h1 class="page-title">Contact</h1>
+          <p class="contact-content">
+            Have a pursuit problem? Need a custom solution? Our team is standing
+            by — relatively unharmed.
+          </p>
+
+          <div class="hs-form-frame" id="hsFormFrame">
+            <p class="form-intro">
+              We'd love to hear from you! Please fill out the form and we'll get
+              back to you as soon as possible.
+            </p>
+
+            <form class="contact-form" id="contactForm">
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="firstName">First Name</label>
+                  <input type="text" id="firstName" name="firstName" />
+                </div>
+                <div class="form-field">
+                  <label for="lastName">Last Name</label>
+                  <input type="text" id="lastName" name="lastName" />
+                </div>
+              </div>
+
+              <div class="form-field form-field-full">
+                <label for="email">Email<span class="required">*</span></label>
+                <input type="email" id="email" name="email" required />
+              </div>
+
+              <div class="form-submit-wrap">
+                <button type="submit" class="btn-submit">Submit</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="hubspot-note">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#ff7a59">
+              <circle cx="18" cy="5" r="2.5" />
+              <circle cx="6" cy="12" r="2.5" />
+              <circle cx="12" cy="19" r="2.5" />
+              <line
+                x1="18"
+                y1="5"
+                x2="6"
+                y2="12"
+                stroke="#ff7a59"
+                stroke-width="1.5"
+              />
+              <line
+                x1="6"
+                y1="12"
+                x2="12"
+                y2="19"
+                stroke="#ff7a59"
+                stroke-width="1.5"
+              />
+            </svg>
+            <span
+              ><a href="/create-form/" class="underline-link"
+                >Create your own free forms</a
+              >
+              to generate leads from your website.</span
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>© 2026 Acme Corp. All rights reserved.</footer>
+    <script src="/nav.js"></script>
+    <script>
+      const contactForm = document.getElementById("contactForm");
+      contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const frame = document.getElementById("hsFormFrame");
+        frame.innerHTML = `
+        <h2 class="form-success-title">Form submitted</h2>
+        <p class="form-success-text">Thank you, we'll be in touch soon.</p>
+      `;
+      });
+    </script>
+  </body>
+</html>

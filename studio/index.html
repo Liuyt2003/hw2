@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Studio · Acme Corp</title>
+    <style>
+      :root {
+        --sidebar-bg: #14141a;
+        --accent: #f03e2f;
+        --text-muted: #6e6e78;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        font-family:
+          -apple-system, "Inter", "Segoe UI", "PingFang SC", "Microsoft YaHei",
+          sans-serif;
+        background: var(--sidebar-bg);
+        color: #d7d7dd;
+      }
+      .wrap {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 24px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+        font-size: 15px;
+        color: #fff;
+        margin-bottom: 28px;
+      }
+      .brand .dot {
+        width: 20px;
+        height: 20px;
+        border-radius: 6px;
+        background: var(--accent);
+      }
+      .icon {
+        font-size: 40px;
+        margin-bottom: 16px;
+      }
+      h1 {
+        font-size: 20px;
+        color: #fff;
+        margin: 0 0 10px 0;
+      }
+      p {
+        max-width: 420px;
+        color: var(--text-muted);
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 0 0 28px 0;
+      }
+      a.back {
+        color: #d7d7dd;
+        font-size: 13px;
+        text-decoration: none;
+        border: 1px solid #3a3a45;
+        padding: 8px 16px;
+        border-radius: 4px;
+      }
+      a.back:hover {
+        border-color: var(--accent);
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="brand"><span class="dot"></span>Acme Studio</div>
+      <div class="icon">🚧</div>
+      <h1>This is where content editing would live</h1>
+      <p>
+        In production this route hosts the CMS used to write and publish blog
+        posts. This project has no real backend, so it's a placeholder rather
+        than a working editor — posts are added directly in
+        <code>blog/index.html</code> directly.
+      </p>
+      <a class="back" href="/blog/">← Back to site</a>
+    </div>
+  </body>
+</html>
